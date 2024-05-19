@@ -1,0 +1,17 @@
+# This is to configure Raspbian v11 (Bullseye)
+# It might work with other versions of Raspbian, but it is not guaranteed
+
+# Install K3s
+RUN sudo curl -sfL https://get.k3s.io | sh -
+
+# Check if K3s is running
+RUN sudo echo "K3: $(systemctl is-active k3s) ..."
+
+# Get the node token
+RUN echo "NODE_TOKEN=$(sudo cat /var/lib/rancher/k3s/server/node-token)"
+#echo "Use this token to join worker nodes to the cluster."
+# Print the kubeconfig file = /etc/rancher/k3s/k3s.yaml"
+# Copy this file to your local machine to use kubectl.
+RUN sudo cat '/etc/rancher/k3s/k3s.yaml'
+
+RUN exit

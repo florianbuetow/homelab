@@ -1,0 +1,23 @@
+# This is to configure Raspbian v11 (Bullseye)
+# It might work with other versions of Raspbian, but it is not guaranteed
+
+# Update all packages
+RUN sudo apt-get update
+
+# Disable Wi-Fi
+RUN sudo rfkill block wifi
+
+# Disable Bluetooth
+RUN sudo rfkill block bluetooth
+
+# Set locale to en_US
+RUN sudo sed -i 's/^# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && sudo locale-gen && sudo update-locale LANG=en_US.UTF-8
+
+# Enable Cgroups (to be able to run kubernetes later)
+RUN sudo sed -i 's/$/  cgroup_memory=1 cgroup_enable=memory/' /boot/firmware/cmdline.txt
+
+# Configure the static IP
+RUN sudo nmcli con mod "$(nmcli -t -f NAME con show --active | head -n 1)" ipv4.method manual ipv4.addresses "{{STATIC_IP}}/{{NETMASK}}" ipv4.gateway "{{GATEWAY_IP}}" ipv4.dns "{{DNS_IP}}"
+
+# Reboot the Raspberry Pi
+RUN sudo reboot now
