@@ -1,0 +1,6 @@
+# This is to configure user shell on Raspbian v11 (Bullseye)
+
+# Add aliases
+RUN echo "alias q='exit'" >> .bash_aliases
+RUN echo "alias cls='clear'" >> .bash_aliases
+RUN echo "alias scr='screen -r'" >> .bash_aliases

@@ -2,7 +2,7 @@
 # It might work with other versions of Raspbian, but it is not guaranteed
 
 # Update all packages
-RUN sudo apt-get update
+RUN sudo apt-get update --yes
 
 # Disable Wi-Fi
 RUN sudo rfkill block wifi
