@@ -1,0 +1,46 @@
+# Setup aliases for cluster nodes
+RUN echo '{{CLUSTER_NODE-01_IP}} node-01' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-02_IP}} node-02' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-03_IP}} node-03' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-04_IP}} node-04' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-05_IP}} node-05' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-06_IP}} node-06' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-07_IP}} node-07' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-08_IP}} node-08' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-09_IP}} node-09' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-10_IP}} node-10' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-11_IP}} node-11' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-12_IP}} node-12' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-13_IP}} node-13' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-14_IP}} node-14' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-15_IP}} node-15' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-16_IP}} node-16' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-17_IP}} node-17' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-18_IP}} node-18' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-19_IP}} node-19' | sudo tee -a /etc/hosts
+RUN echo '{{CLUSTER_NODE-20_IP}} node-20' | sudo tee -a /etc/hosts
+
+RUN echo "alias ssh1='ssh pi@node-01'" >> .bash_aliases
+RUN echo "alias ssh2='ssh pi@node-02'" >> .bash_aliases
+RUN echo "alias ssh3='ssh pi@node-03'" >> .bash_aliases
+RUN echo "alias ssh4='ssh pi@node-04'" >> .bash_aliases
+RUN echo "alias ssh5='ssh pi@node-05'" >> .bash_aliases
+RUN echo "alias ssh6='ssh pi@node-06'" >> .bash_aliases
+RUN echo "alias ssh7='ssh pi@node-07'" >> .bash_aliases
+RUN echo "alias ssh8='ssh pi@node-08'" >> .bash_aliases
+RUN echo "alias ssh9='ssh pi@node-09'" >> .bash_aliases
+RUN echo "alias ssh10='ssh pi@node-10'" >> .bash_aliases
+RUN echo "alias ssh11='ssh pi@node-11'" >> .bash_aliases
+RUN echo "alias ssh12='ssh pi@node-12'" >> .bash_aliases
+RUN echo "alias ssh13='ssh pi@node-13'" >> .bash_aliases
+RUN echo "alias ssh14='ssh pi@node-14'" >> .bash_aliases
+RUN echo "alias ssh15='ssh pi@node-15'" >> .bash_aliases
+RUN echo "alias ssh16='ssh pi@node-16'" >> .bash_aliases
+RUN echo "alias ssh17='ssh pi@node-17'" >> .bash_aliases
+RUN echo "alias ssh18='ssh pi@node-18'" >> .bash_aliases
+RUN echo "alias ssh19='ssh pi@node-19'" >> .bash_aliases
+RUN echo "alias ssh20='ssh pi@node-20'" >> .bash_aliases
+
+# Setup aliases for NAS server
+RUN echo '{{PINAS_IP}} pinas' | sudo tee -a /etc/hosts
+RUN echo "alias sshnas='ssh pi@pinas'" >> .bash_aliases
