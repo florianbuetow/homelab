@@ -11,6 +11,7 @@ class RaspberianBullsEyeK3Recipe(Recipe):
             {"open_connection": {'username': '{{USERNAME}}', 'password': '{{PASSWORD}}', 'host': '{{DYNAMIC_IP}}'}},
             {"message": 'Installing base system'},
             {"template": 'raspbian-bullseye_base.template'},
+            {"wait": 10},
             {"close_connection": True},
             {"message": 'Waiting 60s for reboot'},
             {"wait": 60},
@@ -19,7 +20,7 @@ class RaspberianBullsEyeK3Recipe(Recipe):
             {"template": 'raspbian-bullseye_tools.template'},
             {"message": 'Customizing user shell'},
             {"template": 'raspbian-bullseye_shellcfg.template'},
-            {"message": 'Installing k3s'},
-            {"template": 'raspbian-bullseye_k3.template'},
+            # {"message": 'Installing k3s'},
+            # {"template": 'raspbian-bullseye_k3.template'},
             {"close_connection": True},
         ])

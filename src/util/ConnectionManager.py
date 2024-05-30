@@ -9,6 +9,7 @@ class ConnectionManager:
     def open_connection(self, host, username, password):
         self.ssh_client = paramiko.SSHClient()
         self.ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        print("Connecting to {} with username {} and password {}".format(host, username, password))
         self.ssh_client.connect(host, username=username, password=password)
         print("SSH connection established")
 

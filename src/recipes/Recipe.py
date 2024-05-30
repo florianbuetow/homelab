@@ -65,9 +65,11 @@ class Recipe:
                 lines = template.split('\n')
                 for line in lines:
                     line = line.rstrip()
-                    if not line or line.startswith('#'):
-                        print("RECIPE LINE: ", line)
+                    if line.startswith('#') or not line:
+                        print("           : ", line)
                         continue
+                    print("EXECUTING  : ", line)
+
                     out, err = self._connectionManager.execute(line)
                     if out: print("STDOUT:", out)
                     if err: print("STDERR:", err)
@@ -75,8 +77,8 @@ class Recipe:
             elif 'wait' in stage:
                 time.sleep(int(stage['wait']))
             elif 'open_connection' in stage:
-                params = stage['open_connection']
-                params = self._templateHelper.apply_params(params, self._params)
+                params_template = stage['open_connection']
+                params = self._templateHelper.apply_params(params_template, self._params)
                 self._connectionManager.open_connection(host=params['host'], username=params['username'], password=params['password'])
             elif 'close_connection' in stage:
                 if stage['close_connection']:

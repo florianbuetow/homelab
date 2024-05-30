@@ -30,6 +30,7 @@ class TemplateHelper:
     def apply_params(self, template, params):
         if isinstance(template, str):
             for key, value in params.items():
+                key = "{{"+key+"}}"
                 if key in template:
                     template = template.replace(key, value)
         elif isinstance(template, list):
