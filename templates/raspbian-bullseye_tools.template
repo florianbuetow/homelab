@@ -2,7 +2,10 @@
 # It might work with other versions of Raspbian, but it is not guaranteed
 
 # Update the package list
-RUN sudo apt update --yes
+sudo apt update --yes
 
 # Install selected packages
-RUN sudo apt-get install --yes screen tmux mc iotop iftop htop nload nmon ioping iotop sysstat atop dstat
+sudo apt-get install --yes screen tmux mc iotop iftop htop nload nmon ioping iotop sysstat atop dstat
+
+# Install some more tools
+sudo apt-get install --yes ffmpeg exiftool

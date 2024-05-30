@@ -1,13 +1,13 @@
 # This is to configure user shell on Raspbian v11 (Bullseye)
 
 # Add aliases
-RUN echo "alias q='exit'" >> .bash_aliases
-RUN echo "alias cls='clear'" >> .bash_aliases
-RUN echo "alias scr='screen -r'" >> .bash_aliases
-RUN echo "alias l='ls -a'" >> .bash_aliases
-RUN echo "alias ll='ls -alh'" >> .bash_aliases
-RUN echo "alias cdd='cd ~ && ls -alh'" >> .bash_aliases
-RUN echo "alias cdp='cd projects && ls -alh'" >> .bash_aliases
+echo "alias q='exit'" >> .bash_aliases
+echo "alias cls='clear'" >> .bash_aliases
+echo "alias scr='screen -r'" >> .bash_aliases
+echo "alias l='ls -a'" >> .bash_aliases
+echo "alias ll='ls -alh'" >> .bash_aliases
+echo "alias cdd='cd ~ && ls -alh'" >> .bash_aliases
+echo "alias cdp='cd projects && ls -alh'" >> .bash_aliases
 
 # Add default directories
-RUN mkdir projects
+mkdir projects
