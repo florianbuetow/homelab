@@ -4,3 +4,10 @@
 RUN echo "alias q='exit'" >> .bash_aliases
 RUN echo "alias cls='clear'" >> .bash_aliases
 RUN echo "alias scr='screen -r'" >> .bash_aliases
+RUN echo "alias l='ls -a'" >> .bash_aliases
+RUN echo "alias ll='ls -alh'" >> .bash_aliases
+RUN echo "alias cdd='cd ~ && ls -alh'" >> .bash_aliases
+RUN echo "alias cdp='cd projects && ls -alh'" >> .bash_aliases
+
+# Add default directories
+RUN mkdir projects
