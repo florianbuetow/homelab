@@ -1,0 +1,25 @@
+# This is to install some useful CLI tools on Raspbian v11 (Bullseye)
+# It might work with other versions of Raspbian, but it is not guaranteed
+
+# Update the package list
+sudo apt update --yes
+
+## Install selected packages
+
+# Terminal multiplexers
+sudo apt-get install --yes screen tmux
+
+# File managers
+sudo apt-get install --yes mc
+
+# System monitoring tools
+sudo apt-get install --yes iotop iftop htop nload nmon ioping iotop sysstat atop dstat
+
+# For auto mounting USB drives
+sudo apt-get install --yes autofs
+
+# Development tools
+sudo apt-get install --yes git
+
+# Audio, Video and Image processing tools
+sudo apt-get install --yes ffmpeg exiftool yt-dlp

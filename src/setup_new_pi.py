@@ -1,11 +1,11 @@
 from pprint import pprint
 
 from util.TemplateHelper import TemplateHelper
-from recipes.Recipes import RaspberianBullsEyeK3Recipe
+from recipes.Recipes import UbuntuK3Recipe
 
 if __name__ == '__main__':
 
-    NETWORK_PREFIX = '192.168.1.'
+    NETWORK_PREFIX = '192.168.178.'
     TEMPLATE_DIR = '../templates/'
     templateHelper = TemplateHelper(TEMPLATE_DIR)
 
@@ -28,5 +28,5 @@ if __name__ == '__main__':
         key = "CLUSTER_NODE-%02d_IP'" % (id)
         params[key] = NETWORK_PREFIX + str(130 + id - 1)
 
-    recipe = RaspberianBullsEyeK3Recipe(templateHelper, params)
+    recipe = UbuntuK3Recipe(templateHelper, params)
     recipe.apply()
